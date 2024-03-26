@@ -1,18 +1,10 @@
-"use client";
-import { SessionProvider } from "next-auth/react";
-import { Session } from "next-auth";
 import Main from "@/components/Main/Main";
+import styles from "./page.module.scss";
 
-interface Props {
-  session: Session | null;
-}
-
-const Home: React.FC<Props> = ({ session }) => {
+const Home: React.FC = () => {
   return (
-    <main>
-      <SessionProvider session={session}>
-        <Main />
-      </SessionProvider>
+    <main className={styles.main}>
+      <Main />
     </main>
   );
 };

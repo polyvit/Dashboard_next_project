@@ -14,11 +14,11 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import ThemeToggleBtn from "../ThemeToggle/ThemeToggleBtn";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-export default function Header() {
+export default function Header({ ColorModeContext }) {
   const { data: session } = useSession();
 
   const userImg = session?.user?.image as string;
@@ -65,7 +65,7 @@ export default function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            DASHBOARD
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -137,6 +137,7 @@ export default function Header() {
           <Box sx={{ paddingRight: 5 }}>
             <Typography>Signed in as {session?.user?.email}</Typography>
           </Box>
+          <ThemeToggleBtn ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open profile settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

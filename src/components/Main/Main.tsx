@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Header from "../Header/Header";
 import SideMenu from "../SideMenu/SideMenu";
@@ -10,7 +11,6 @@ function Main() {
 
   return (
     <>
-      <Header />
       {session && (
         <>
           <SideMenu />
