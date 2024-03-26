@@ -15,11 +15,13 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import ThemeToggleBtn from "../ThemeToggle/ThemeToggleBtn";
+import { useMediaQuery } from "@mui/material";
 
 const pages = ["Products", "Pricing", "Blog"];
 
 export default function Header({ ColorModeContext }) {
   const { data: session } = useSession();
+  const tabletCheck = useMediaQuery("(min-width: 768px)");
 
   const userImg = session?.user?.image as string;
 
@@ -134,9 +136,11 @@ export default function Header({ ColorModeContext }) {
               </Button>
             ))}
           </Box>
-          <Box sx={{ paddingRight: 5 }}>
-            <Typography>Signed in as {session?.user?.email}</Typography>
-          </Box>
+          {tabletCheck && (
+            <Box sx={{ paddingRight: 5 }}>
+              <Typography>Signed in as {session?.user?.email}</Typography>
+            </Box>
+          )}
           <ThemeToggleBtn ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open profile settings">
