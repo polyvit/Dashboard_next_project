@@ -19,6 +19,7 @@ import Drawer from "@mui/material/Drawer";
 
 import styles from "./SideMenu.module.scss";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { signOut } from "next-auth/react";
 
 const drawerWidth = 240;
 
@@ -59,6 +60,11 @@ export default function SideMenu() {
 
   const handleDrawerToggle = () => {
     setOpen(!open);
+  };
+
+  const handleListItemClick = (text: string) => {
+    text === "Sign Out" ? signOut() : null;
+    setOpen(false);
   };
 
   return (
@@ -102,7 +108,9 @@ export default function SideMenu() {
               href={`/dashboard/${menuRouteList[index]}`}
             >
               <ListItemButton
-                onClick={() => setOpen(false)}
+                onClick={() => handleListItemClick(text)}
+                title={text}
+                aria-label={text}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
