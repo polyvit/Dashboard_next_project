@@ -3,13 +3,15 @@ import React from "react";
 import { createContext, useMemo, useState, ReactNode } from "react";
 // import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { SessionProvider } from "next-auth/react";
 import { Session } from "next-auth";
 import darkTheme from "@/theme/darkTheme";
 import lightTheme from "@/theme/lightTheme";
 import Header from "@/components/Header/Header";
+import SideMenu from "@/components/SideMenu/SideMenu";
+import Layout from "@/components/Layout/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,7 +65,7 @@ export default function RootLayout({
             <SessionProvider session={session}>
               <CssBaseline />
               <Header ColorModeContext={ColorModeContext} />
-              {children}
+              <Layout>{children}</Layout>
             </SessionProvider>
           </ThemeProvider>
         </ColorModeContext.Provider>

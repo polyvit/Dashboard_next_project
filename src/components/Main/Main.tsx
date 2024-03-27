@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Header from "../Header/Header";
 import SideMenu from "../SideMenu/SideMenu";
 import Dashboard from "@/app/dashboard/page";
 import Login from "../Login/Login";
@@ -11,13 +10,8 @@ function Main() {
 
   return (
     <>
-      {session && (
-        <>
-          <SideMenu />
-          <Dashboard />
-        </>
-      )}
-      <Login />
+      {session && <Dashboard />}
+      {!session && <Login />}
     </>
   );
 }

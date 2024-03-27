@@ -102,6 +102,7 @@ export default function SideMenu() {
               href={`/dashboard/${menuRouteList[index]}`}
             >
               <ListItemButton
+                onClick={() => setOpen(false)}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
