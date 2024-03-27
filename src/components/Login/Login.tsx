@@ -9,21 +9,15 @@ export default function Login() {
 
   if (session) {
     return (
-      <>
-        Signed in as {session?.user?.email} <br />
-        <Button variant="contained" color="error" onClick={() => signOut()}>
-          Sign out
-        </Button>
-      </>
+      <Button variant="contained" color="error" onClick={() => signOut()}>
+        Sign out
+      </Button>
     );
   }
 
   return (
-    <>
-      Please log in <br />
-      <Button variant="contained" color="success" onClick={() => signIn()}>
-        Sign in
-      </Button>
-    </>
+    <Button variant="contained" color="success" onClick={() => signIn()}>
+      Sign in
+    </Button>
   );
 }
