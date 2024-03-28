@@ -14,7 +14,7 @@ export const lineChartData = {
 };
 
 export const doughnutChartData = {
-  labels: ["Red", "Blue", "Yellow"],
+  labels: ["LightPink", "Pink", "Red"],
   datasets: [
     {
       label: "Transaction Dataset",
