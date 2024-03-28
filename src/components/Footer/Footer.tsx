@@ -1,3 +1,4 @@
+"use client";
 import { useTheme } from "@mui/material/styles";
 import styled from "@emotion/styled";
 import { Paper, Button } from "@mui/material";

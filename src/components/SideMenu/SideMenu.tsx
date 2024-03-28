@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { useTheme, Theme, CSSObject } from "@mui/material/styles";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
