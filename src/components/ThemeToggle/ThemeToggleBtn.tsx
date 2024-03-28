@@ -16,7 +16,7 @@ export default function ThemeToggleBtn(props: Props) {
   const colorMode = useContext(ColorModeContext);
   return (
     <>
-      {mobileCheck && <Typography>{theme.palette.mode}</Typography>}
+      {/* {mobileCheck && <Typography>{theme.palette.mode}</Typography>} */}
       <IconButton
         sx={{ mr: 2 }}
         title={theme.palette.mode + " mode"}

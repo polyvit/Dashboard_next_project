@@ -88,7 +88,9 @@ export default function Header({ ColorModeContext }) {
           </Typography>
           {tabletCheck && (
             <Box sx={{ paddingRight: 5, marginLeft: "auto" }}>
-              <Typography>Signed in as {session?.user?.email}</Typography>
+              {session && (
+                <Typography>Signed in as {session?.user?.email}</Typography>
+              )}
             </Box>
           )}
           <ThemeToggleBtn ColorModeContext={ColorModeContext} />
