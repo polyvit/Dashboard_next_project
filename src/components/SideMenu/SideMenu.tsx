@@ -11,6 +11,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import HomeIcon from "@mui/icons-material/Home";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -44,9 +45,10 @@ const closedMixin = (theme: Theme): CSSObject => ({
   },
 });
 
-const menuRouteList = ["analytics", "profile", "settings", ""];
-const menuTitleList = ["Analytics", "Profile", "Settings", "Sign Out"];
+const menuRouteList = ["", "analytics", "profile", "settings", ""];
+const menuTitleList = ["Home", "Analytics", "Profile", "Settings", "Sign Out"];
 const menuIconsList = [
+  <HomeIcon />,
   <EqualizerIcon />,
   <Person2Icon />,
   <SettingsIcon />,

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Card, Grid, Paper, Typography, useTheme } from "@mui/material";
 import styles from "./TransactionsChart.module.scss";

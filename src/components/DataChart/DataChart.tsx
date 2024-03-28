@@ -1,3 +1,4 @@
+"use client";
 import { months } from "@/helpers/utils";
 import { Chart, registerables } from "chart.js";
 import React, { useEffect, useRef } from "react";
