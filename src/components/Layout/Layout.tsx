@@ -10,7 +10,10 @@ export default function Layout({ children }) {
   const path = usePathname();
 
   return (
-    <div className="layout" style={{ padding: session ? "0 24px 0 80px" : 0 }}>
+    <div
+      className="layout"
+      style={{ padding: session ? "80px 24px 100px 80px" : 0 }}
+    >
       {session && <SideMenu />}
       {children}
       {session && <Footer />}

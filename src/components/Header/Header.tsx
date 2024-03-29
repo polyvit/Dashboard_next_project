@@ -7,38 +7,29 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import ThemeToggleBtn from "../ThemeToggle/ThemeToggleBtn";
 import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import Link from "next/link";
 
 export default function Header({ ColorModeContext }) {
   const { data: session } = useSession();
+  const theme = useTheme();
   const tabletCheck = useMediaQuery("(min-width: 768px)");
 
   const userImg = session?.user?.image as string;
 
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -46,7 +37,7 @@ export default function Header({ ColorModeContext }) {
   };
 
   return (
-    <AppBar position="static" sx={{ marginBottom: "40px" }}>
+    <AppBar position="fixed" sx={{ marginBottom: "40px" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -116,6 +107,17 @@ export default function Header({ ColorModeContext }) {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem>
+                <Link
+                  href={"/dashboard/profile"}
+                  style={{
+                    color: theme.palette.text.primary,
+                    textDecoration: "none",
+                  }}
+                >
+                  <Typography textAlign="center">Profile</Typography>
+                </Link>
+              </MenuItem>
               <MenuItem onClick={() => (session ? signOut() : signIn())}>
                 <Typography textAlign="center">
                   {session ? "Logout" : "Login"}
