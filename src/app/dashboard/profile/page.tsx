@@ -140,7 +140,7 @@ export default function Profile() {
                         <Checkbox
                           name="receiveEmails"
                           color="primary"
-                          value={formData.receiveEmails}
+                          checked={formData.receiveEmails}
                           onChange={handleFormChange}
                         />
                       }
