@@ -13,9 +13,14 @@ export default function SignIn() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        marginTop: "100px",
       }}
     >
-      <h2>{session ? "Thank you for logging in" : "Please log in"}</h2>
+      <h2>
+        {session
+          ? "Thank you for logging in. Use sidebar menu to see the main content."
+          : "Please log in"}
+      </h2>
       <Login />
     </Box>
   );
